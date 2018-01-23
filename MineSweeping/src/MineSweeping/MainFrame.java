@@ -58,8 +58,8 @@ public class MainFrame extends JFrame{
 		
 		
 	}
-	public static void main(String[] str){
-		
-		new MainFrame();
-	}
+//	public static void main(String[] str){
+//		
+//		new MainFrame();
+//	}
 }

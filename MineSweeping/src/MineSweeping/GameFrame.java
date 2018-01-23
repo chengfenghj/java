@@ -31,6 +31,7 @@ public class GameFrame extends JFrame{
 		JMenuBar menu =new JMenuBar(); 
 		JMenu startmenu =new JMenu("     开     始     ");
 		JMenu hardmenu =new JMenu("     难     度     ");
+		JMenu betaComemenu =new JMenu("     BetaCome ");
 		
 		JMenuItem restart =new JMenuItem("重 新 游 戏");
 		restart.addActionListener(new ActionListener(){
@@ -81,13 +82,36 @@ public class GameFrame extends JFrame{
 		});
 		hardmenu.add(sixtymine);
 		
+		JMenuItem betaCome =new JMenuItem("BetaCome自动扫雷");
+		betaCome.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				gamepanel.setBetaCome(true);
+				gamepanel.betaComeDo();
+			}
+		});
+		betaComemenu.add(betaCome);
+		
+		JMenuItem reminder =new JMenuItem("BetaCome提示");
+		reminder.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				gamepanel.betaComeRemind();
+			}
+		});
+		betaComemenu.add(reminder);
+		
 		menu.add(startmenu);
 		menu.add(hardmenu);
+		menu.add(betaComemenu);
 		setJMenuBar(menu);
 		
 		setVisible(true);
 		
 		Container contentpane =getContentPane();
 		contentpane.add(gamepanel);
+	}
+	
+	public static void main(String[] str){
+		
+		new GameFrame();
 	}
 }
